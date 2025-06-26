@@ -19,7 +19,7 @@ def payment_confirm_keyboard(summ: str) -> InlineKeyboardBuilder:
 def choose_payment_method_keyboard(need_back_button: bool = True) -> InlineKeyboardBuilder:
     """Выбор способа оплаты"""
     keyboard = InlineKeyboardBuilder()
-    keyboard.row(InlineKeyboardButton(text="Перевод на карту 💳", callback_data=f"pay_method_transfer"))
+    # keyboard.row(InlineKeyboardButton(text="Перевод на карту 💳", callback_data=f"pay_method_transfer"))
     keyboard.row(InlineKeyboardButton(text="Звездами телеграм ⭐️", callback_data=f"pay_method_star"))
 
     if settings.need_payment_service:
