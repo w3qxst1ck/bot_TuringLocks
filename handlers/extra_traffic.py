@@ -22,6 +22,7 @@ router = Router()
 
 
 @router.callback_query(F.data == "buy-extra-traffic")
+@router.callback_query(F.data == "buy-extra-traffic-from-buy-menu")
 async def buy_extra_traffic_menu(callback: types.CallbackQuery, session: Any):
     """Меню выбора ключей для покупки дополнительного трафика"""
     tg_id = str(callback.from_user.id)
@@ -30,7 +31,7 @@ async def buy_extra_traffic_menu(callback: types.CallbackQuery, session: Any):
     is_empty: bool = len(active_connections) == 0
     msg = ms.buy_extra_traffic_message(is_empty)
 
-    await callback.message.edit_text(msg, reply_markup=kb.keys_list(active_connections).as_markup())
+    await callback.message.edit_text(msg, reply_markup=kb.keys_list(active_connections, callback.data).as_markup())
 
 
 @router.callback_query(F.data.split("|")[0] == "extra-traffic")

@@ -5,7 +5,7 @@ from schemas.connection import ConnectionRegion
 from handlers.buttons import menu as btn, regions
 
 
-def keys_list(connections: list[ConnectionRegion]) -> InlineKeyboardBuilder:
+def keys_list(connections: list[ConnectionRegion], callback: str) -> InlineKeyboardBuilder:
     """Клавиатура со всеми ключами пользователя"""
     keyboard = InlineKeyboardBuilder()
 
@@ -13,7 +13,10 @@ def keys_list(connections: list[ConnectionRegion]) -> InlineKeyboardBuilder:
         flag = regions.FLAGS[conn.region]
         keyboard.row(InlineKeyboardButton(text=f"{flag} {conn.description}", callback_data=f"extra-traffic|{conn.id}"))
 
-    keyboard.row(InlineKeyboardButton(text=f"{btn.BACK}", callback_data="menu|keys"))
+    if callback == "buy-extra-traffic-from-buy-menu":
+        keyboard.row(InlineKeyboardButton(text=f"{btn.BACK}", callback_data="menu|buy"))
+    else:
+        keyboard.row(InlineKeyboardButton(text=f"{btn.BACK}", callback_data="menu|keys"))
     keyboard.adjust(1)
 
     return keyboard

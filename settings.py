@@ -7,15 +7,15 @@ from pydantic import Field
 PRICES = {
     "1": 150,
     "3": 450,
-    "6": 900,
-    "12": 1800
+    "6": 810,
+    "12": 1440
 }
 
 STARS_PRICES = {
-    "75": 150,
-    "150": 300,
-    "300": 600,
-    "600": 1200
+    "80": 150,
+    "240": 450,
+    "450": 810,
+    "800": 1440
 }
 
 
@@ -43,8 +43,8 @@ class Server(BaseSettings):
 
 
 class Settings(BaseSettings):
-    bot_name: str = "VIRA Bot"
-    bot_tg_name: str = "VIRADigitalBot"
+    bot_name: str = "Turing Locks VPN"
+    bot_tg_name: str = "TLVPN_bot"
     bot_token: str = Field(..., env='BOT_TOKEN')
     admins: list = Field(..., env='ADMINS')
     # payment_admin: str = Field(..., env='PAYMENT_ADMIN')
@@ -70,7 +70,7 @@ class Settings(BaseSettings):
     need_payment_service: bool = False
     # payment_token: str = Field(..., env='PAYMENT_TOKEN')
 
-    user_agreement_link: str = "https://telegra.ph/PUBLICHNAYA-OFERTA-04-08-2"
+    user_agreement_link: str = "https://telegra.ph/Polzovatelskoe-soglashenie-Publichnaya-oferta-06-26"
 
 
 settings = Settings()

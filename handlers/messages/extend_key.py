@@ -17,8 +17,8 @@ def extend_key_menu_message(user_with_conns: UserConnList) -> str:
                   f"Стоимость продления ключа VPN\n" \
                   f"• 1 месяц <b>{settings.price_list['1']} р.</b>\n" \
                   f"• 3 месяца <b>{settings.price_list['3']} р.</b>\n" \
-                  f"• 6 месяцев <b>{settings.price_list['6']} р.</b>\n" \
-                  f"• 12 месяцев <b>{settings.price_list['12']} р.</b>\n\n" \
+                  f"• 6 месяцев <b>{settings.price_list['6']} р.</b> (скидка 10%)\n" \
+                  f"• 12 месяцев <b>{settings.price_list['12']} р.</b> (скидка 20%)\n\n" \
                   f"Выберите ключ, который необходимо продлить, с помощью кнопок ниже (если ключ еще активен, " \
                   f"срок продления будет прибавлен к текущему)\n\n" \
                   f"✅ - Активные ключи\n" \
@@ -38,8 +38,8 @@ def extend_key_period_message(balance: int, description: str, active: bool, expi
               f"Стоимость продления ключа {flag} <b>{description}</b> {active_phrase}\n" \
               f"• 1 месяц <b>{settings.price_list['1']} р.</b>\n" \
               f"• 3 месяца <b>{settings.price_list['3']} р.</b>\n" \
-              f"• 6 месяцев <b>{settings.price_list['6']} р.</b>\n" \
-              f"• 12 месяцев <b>{settings.price_list['12']} р.</b>\n\n" \
+              f"• 6 месяцев <b>{settings.price_list['6']} р.</b> (скидка 10%)\n" \
+              f"• 12 месяцев <b>{settings.price_list['12']} р.</b> (скидка 20%)\n\n" \
               f"Для продления ключа выберите необходимый срок действия с помощью кнопок ниже"
     return message
 
