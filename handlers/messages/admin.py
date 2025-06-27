@@ -12,11 +12,7 @@ def statistics_message(data: dict) -> str:
               f"🔑 <b>Всего ключей:</b> {data['all_keys']}\n"\
               f"— Активных ключей: {data['active_keys']}\n"\
               f"— Пробных ключей: {data['trial_keys']}\n\n"\
-              f"💵 <b>Всего пополнений:</b> {data['payments_transfer_all_time'] + data['payments_stars_all_time']} ₽\n" \
-              f"— Переводом: {data['payments_transfer_all_time']} ₽\n" \
-              f"— Telegram Stars: {data['payments_stars_all_time']} ₽\n\n"\
-              f"📈 <b>Пополнений за месяц:</b> {data['payments_transfer_last_period'] + data['payments_stars_last_period']} ₽\n" \
-              f"— Переводом: {data['payments_transfer_last_period']} ₽\n" \
-              f"— Telegram Stars: {data['payments_stars_last_period']} ₽\n"
+              f"💵 <b>Всего пополнений:</b> {data['payments_stars_all_time']} ₽\n\n" \
+              f"📈 <b>Пополнений за месяц:</b> {data['payments_stars_last_period']} ₽\n" \
 
     return message
