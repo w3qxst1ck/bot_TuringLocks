@@ -58,7 +58,7 @@ async def instruction_for_os(callback: types.CallbackQuery) -> None:
 @router.message(Command(f"{cmd.HELP[0]}"))
 async def help_handler(message: types.Message) -> None:
     msg = ms.help_message()
-    await message.answer(msg)
+    await message.answer(msg, disable_web_page_preview=True)
 
 
 @router.message(Command(f"{cmd.MENU[0]}"))
